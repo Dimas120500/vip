@@ -67,7 +67,7 @@ fi
 # Information vps
 curl -sS "ipinfo.io/org?token=7a814b6263b02c" > /root/.isp
 curl -sS "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
-
+curl -sS "ipinfo.io/ip?token=7a814b6263b02c" > /root/.ip
 # // IP Address Validating
 if [[ $IP == "" ]]; then
     echo -e "${EROR} IP Address ( ${YELLOW}Not Detected${NC} )"
@@ -327,7 +327,7 @@ restart_system(){
 <code>────────────────────</code>
 <code>Owner    :</code><code>$USRSC</code>
 <code>Domain   :</code><code>$domain</code>
-<code>IPVPS    :</code><code>$ipsaya</code>
+<code>IPVPS    :</code><code>$(cat /root/.ip)</code>
 <code>ISP      :</code><code>$(cat /root/.isp)</code>
 <code>CITY     :</code><code>$(cat /root/.city)</code>
 <code>Time     :</code><code>$TIMEZONE</code>
